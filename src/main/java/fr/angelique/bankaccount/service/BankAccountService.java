@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 public interface BankAccountService {
-    void deposit(UUID accountId, BigDecimal amount) throws AccountNotFoundException, NegativeAmountException;
-    void withdraw(UUID accountId, BigDecimal amount) throws AccountNotFoundException, NegativeAmountException, OverdraftAccountException;
+    void deposit(UUID accountId, BigDecimal amount, String libelle) throws AccountNotFoundException, NegativeAmountException;
+    void withdraw(UUID accountId, BigDecimal amount, String libelle) throws AccountNotFoundException, NegativeAmountException, OverdraftAccountException;
+    void printAccountOperations(UUID accountId) throws AccountNotFoundException;
 }
